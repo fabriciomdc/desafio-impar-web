@@ -1,6 +1,8 @@
+import { NewAttendance } from "./presentation/pages/new-attendace";
+
 export function App() {
   return (
-      <h1>Hello World</h1>
+      <NewAttendance/>
   )
 }
 
