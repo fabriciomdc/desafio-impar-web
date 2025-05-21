@@ -1,8 +1,11 @@
-import { NewAttendance } from "./presentation/pages/new-attendace";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
 
 export function App() {
   return (
-      <NewAttendance/>
+      <RouterProvider router={router}>
+      
+      </RouterProvider>
   )
 }
 
