@@ -1,4 +1,4 @@
-# Desafio Impar Backend
+# Desafio Impar Frontend
 
 This repository contains a frontend challenge proposed for the impar-tec
 
