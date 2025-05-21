@@ -1,12 +1,10 @@
-import { useState } from "react";
 import { CloudSun, Moon, Sun } from "lucide-react";
 import { ScheduleSection } from "./schedule/schedule-section";
 import { useAttendances } from "./schedule/hooks/use-attendances";
-import { filterAttendancesByHourRange, getTodayAsDateString } from "../../../utils/date";
+import { filterAttendancesByHourRange } from "../../../utils/date";
 
 export function Schedule() {
-  const [selectedDate, setSelectedDate] = useState(getTodayAsDateString());
-  const { attendances, loading } = useAttendances(selectedDate);
+  const { attendances, loading } = useAttendances();
 
   if (loading) return <p className="text-white">Carregando...</p>;
 
@@ -18,15 +16,6 @@ export function Schedule() {
           <span className="text-gray-400">Aqui você pode consultar seus atendimentos diários</span>
         </div>
 
-        <div className="flex h-12 w-fit items-center gap-[0.625rem] rounded-lg px-3 outline outline-gray-300 focus-within:outline-emerald-600 hover:outline-gray-400">
-          <input
-            type="date"
-            required
-            className="w-full text-white bg-transparent focus:outline-none"
-            value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
-          />
-        </div>
       </header>
 
       <main className="mt-8 grid gap-[0.875rem] [&>*:last-child]:mb-[6.25rem]">

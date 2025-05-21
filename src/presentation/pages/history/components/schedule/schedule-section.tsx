@@ -50,9 +50,6 @@ export function ScheduleSection({
                 </span>
               )}
             </div>
-            <button className="ml-4 whitespace-nowrap text-gray-400 hover:text-gray-500">
-              Remover Atendimento
-            </button>
           </li>
         ))}
       </ul>

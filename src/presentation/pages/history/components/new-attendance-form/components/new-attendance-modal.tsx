@@ -8,7 +8,6 @@ interface NewAttendanceModalProps {
 }
 
 export function NewAttendanceModal({ isOpen, onClose }: NewAttendanceModalProps) {
-  // Fechar no ESC
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose()

@@ -8,9 +8,7 @@ export function History() {
   return (
     <div className="min-h-screen bg-[#14141D]">
       <div className="h-32 w-full" />
-
       <Schedule />
-      
       <NewAttendanceModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
@@ -21,7 +19,7 @@ export function History() {
           onClick={() => setModalOpen(true)}
           className="rounded-md bg-emerald-600 px-4 py-3 text-white transition hover:bg-emerald-700"
         >
-          NOVO AGENDAMENTO
+          Novo Agendamento
         </button>
       </footer>
     </div>

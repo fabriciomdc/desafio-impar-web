@@ -2,16 +2,14 @@ import { useEffect, useState } from "react";
 import type { Attendance } from "../../../../../../dtos/attendance";
 import { api } from "../../../../../../lib/api/axios";
 
-export function useAttendances(date: string) {
+export function useAttendances() {
   const [attendances, setAttendances] = useState<Attendance[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchAttendances() {
       try {
-        const response = await api.get("/attendance", {
-          params: { date },
-        });
+        const response = await api.get("/attendance");
 
         const data: Attendance[] = response.data.map((a: any) => ({
           ...a,
@@ -27,7 +25,7 @@ export function useAttendances(date: string) {
     }
 
     fetchAttendances();
-  }, [date]);
+  }, []);
 
   return { attendances, loading };
 }
